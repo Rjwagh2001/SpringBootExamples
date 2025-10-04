@@ -53,27 +53,27 @@ public class BookService {
     }
 
    //Java 8   (delete book by id)
-//    public List<Book> deleteBook(int id) {
+    public List<Book> deleteBook(int id) {
 //        //Manual
 ////        books.removeIf(book -> book.getId() == id);
 ////        return books;
 //
-//        this.bookRepository.deleteById(id);
-//        return bookRepository.findAll();
-//    }
+        this.bookRepository.deleteById(id);
+        return bookRepository.findAll();
+    }
 
     // delete all books
-//    public List<Book> deleteAll() {
+    public List<Book> deleteAll() {
 //        //Manual
 ////        books.clear();
 ////        return books;
 //
-//        this.bookRepository.deleteAll();
-//        return bookRepository.findAll();
-//    }
+        this.bookRepository.deleteAll();
+        return bookRepository.findAll();
+    }
 
-    //update book method
-//    public List<Book> updateBookById(Book book,int id){
+        //update book method
+    public List<Book> updateBookById(Book book,int id){
 ////
 ////        //Manual
 //////        books=books.stream().map(b->{
@@ -86,12 +86,10 @@ public class BookService {
 //////        return books;
 ////
 ////
-//        book.setId(id);
-//        List<Book> ans = (List<Book>) this.bookRepository.save(book);
-//        return ans;
-//       }
+        book.setId(id);
+        this.bookRepository.save(book);
+        return this.bookRepository.findAll();
+       }
 
 
-
-
-}
+    }

@@ -37,23 +37,23 @@ public class BookController {
     //delete specific books by Id handler
     @DeleteMapping("/books/{id}")
     public List<Book> deleteBookById(@PathVariable("id") int id){
-       // List<Book> ans=this.bookService.deleteBook(id);
-        return null;
+       List<Book> ans=this.bookService.deleteBook(id);
+        return ans;
 
     }
 
     //delete all book handler
     @DeleteMapping("/books")
     public List<Book> deleteAll(){
-        // List<Book> ans=bookService.deleteAll();
-         return null;
+        List<Book> ans=bookService.deleteAll();
+         return ans;
     }
 
     //update book handler
     @PutMapping("/books/{bookId}")
     public List<Book> updateBook(@RequestBody Book book, @PathVariable("bookId") int id){
-      //  return this.bookService.updateBookById(book,id);
-        return null;
+      return this.bookService.updateBookById(book,id);
+        //return null;
     }
 
 

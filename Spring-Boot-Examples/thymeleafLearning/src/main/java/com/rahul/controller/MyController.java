@@ -46,6 +46,12 @@ public class MyController {
     	
     }
     
+    //Using an fragment tag
+    @GetMapping(value="/fragment")
+    public String fragmentController(Model model) {
+    	return "fragment";
+    }
+    
     
     
     

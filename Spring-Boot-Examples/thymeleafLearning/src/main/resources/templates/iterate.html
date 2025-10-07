@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Learning loop</title>
+</head>
+<body>
+    <h1>Learning loop through Thymeleaf</h1>
+    
+    <p>list are: <span th:text="${names}"></span></p>
+    
+    <ul>
+		
+		<!-- without styling below example for itearate an loop -->
+		<li th:each="n,status :${names}">
+			<span th:text="${status.index} + ' '+ ${n}">
+			</span>
+
+		</li>
+		
+		<!-- with styling below example -->
+	     <li th:each="n,status :${names}">
+			<span th:text="${status.index} + ' '+ ${n}" style= "color: blue; font-weight: bold;">
+			</span>
+
+		</li>
+	</ul>
+	
+	
+</body>
+</html>

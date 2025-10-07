@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>About Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 30px;
+        }
+        h1 {
+            color: #2c3e50;
+        }
+        p {
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <h1>About Page</h1>
+    
+    <!-- Using an themleaf expression to get data from variable -->
+    <p>Hello, <span th:text="${name}">User</span>!</p>
+    <p>Current Time: <span th:text="${currentTime}">Time</span></p>
+    <p>Last name is <span th:text="${lastName}"></span></p>
+    
+     <!-- Creating an name as upperCase using themleaf expression-->
+     <p>Last name in UpperCase : <span th:text="${#strings.toUpperCase(lastName)}"></span></p>
+     
+     <!--Calculating length using themleaf expression-->
+     <p>The length off lastName is: <span th:text="${#strings.length(lastName)}"></span></p>
+     <p>The length of lastName is: <span th:text="${#strings.length(lastName)}"></span></p>
+     
+     <!--Calculating length using themleaf expression using locale variable and scope for only div element-->	 
+		<div th:with="a=10, b=20, n=${name}">
+		    <p>Variable a: <span th:text="${a}"></span></p>
+		    <p>Variable b: <span th:text="${b}"></span></p>
+		    <p>Variable a+B: <span th:text="${a+b}"></span></p>
+		    <p>Name variable: <span th:text="${n}"></span></p>
+		</div>
+
+  
+
+
+
+     
+    
+</body>
+</html>

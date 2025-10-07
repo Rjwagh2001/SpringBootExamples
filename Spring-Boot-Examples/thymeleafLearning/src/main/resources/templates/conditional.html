@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Conditional Stamemet Learning ......</title>
+</head>
+<body>
+      <h1>Learning Conditional stament using Thymeleaf ....</h1>
+      
+     
+      <!-- Using an Elvis operator  -->
+      <P>It is :<span   th:style="${isActive} ? 'color:red':'color:green'"
+                        th:text="${isActive} ? 'Working Fine':'Not working fine'">
+                 </span>
+       </P>
+       
+        <!-- Using an if unless   -->
+        <h1 th:if="${gender}=='M'">Male</h1>
+        <h1 th:unless="${gender}=='F'">Female</h1>
+       
+        <!-- Using an if switch statement  -->
+        <div th:switch="${#lists.size(numbers)}">
+			<h2 th:case="'0'">Length of numbers list is Empty</h2>
+			<h2 th:case="'1'">Length of numbers list is 1</h2>
+			<h2 th:case="*">Length of numbers list is gretar than 1</h2>
+		</div>
+        
+       
+       
+</body>
+</html>

@@ -24,6 +24,12 @@
 			<h2 th:case="'1'">Length of numbers list is 1</h2>
 			<h2 th:case="*">Length of numbers list is gretar than 1</h2>
 		</div>
+		
+		<div th:switch="${#lists.size(numbers)}">
+			<h2 th:case="'0'">Length of numbers list is Empty</h2>
+			<h2 th:case="'1'">Length of numbers list is 1</h2>
+			<h2 th:case="*">Length of numbers list is gretar than 1</h2>
+		</div>
         
        
        

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:fragment="layout(content)">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>This is Base Class</title>
+    <link rel="stylesheet" href="@{/style.css}">
+</head>
+<body>
+    <h1>This is the header of the base layout</h1>
+
+    <!-- This is where the child content will be inserted -->
+    <div th:replace="${content}"></div>
+
+    <footer>This is the footer of the base layout</footer>
+</body>
+</html>

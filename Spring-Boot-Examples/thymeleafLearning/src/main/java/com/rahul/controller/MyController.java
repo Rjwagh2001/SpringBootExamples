@@ -49,9 +49,20 @@ public class MyController {
     //Using an fragment tag
     @GetMapping(value="/fragment")
     public String fragmentController(Model model) {
+    	
+    	// passing dynamic values for footer
+    	//model.addAttribute("title","The title is:");
+    	//model.addAttribute("subtitle","The subtitle title is:");
     	return "fragment";
     }
-    
+     
+    //for inherting use base templete and newabout
+    @GetMapping("/inherit")
+    public String inheritingTemplateHandler() {
+        // Return the child template that contains the base layout reference
+        return "aboutNew";
+    }
+
     
     
     

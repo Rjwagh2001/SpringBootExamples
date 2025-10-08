@@ -7,15 +7,27 @@
 <body>
      
      <footer id="footer2" th:fragment="footer1">
-		 <P>Name of fragment is Rahul</P>
-		 <P>Name of fragment is Rahul</P>
+		 <P>The title is: <span th:text="${title}"></span></P>
+		 <P>The subtitle is: <span th:text="${subtitle}"></span></P>
 		 <P>Name of fragment is Rahul</P>
 		 <P>Name of fragment is Rahul</P>
 		 <P> 
 			 jhgfdsasdrtyjmnbvdsrtyjkjhgfdsdghjk,mnbvcdtyujhgfdswsdfghn
 		 </P>
 	 </footer>
-
+	 
+	 
+	 <!-- Parameter footer 
+	 <footer id="footer2" th:fragment="footer1(title,subtitle)">
+		 <P>The title is: <span th:text="${title}"></span></P>
+		 <P>The subtitle is: <span th:text="${subtitle}"></span></P>
+		 <P>Name of fragment is Rahul</P>
+		 <P>Name of fragment is Rahul</P>
+		 <P> 
+			 jhgfdsasdrtyjmnbvdsrtyjkjhgfdsdghjk,mnbvcdtyujhgfdswsdfghn
+		 </P>
+	 </footer>
+     -->
 
 </body>
 </html>

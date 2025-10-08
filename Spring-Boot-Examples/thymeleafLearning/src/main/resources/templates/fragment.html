@@ -8,21 +8,28 @@
     <h1>Learning fargment through Thymeleaf</h1>
     
        <!--replacing whole footer tag with fragment host footer /Replaces the current tag with the content of the specified fragmen -->
-      <footer id="footer1", th:replace="footer::footer1">
+       <footer id="footer1" th:replace="footer::footer1">
 		  
 	  </footer>
 	  
 	    <!-- Inserting whole host footer in below footer with including this footer -->
-      <footer id="footer1", th:insert="footer::footer1">
+      <footer id="footer1" th:insert="footer::footer1">
 		  
 	  </footer>
 	  
 	    <!--
 	    Includes the content of a fragment inside the current tag without replacing the current tag. -->
-      <footer id="footer1", th:include="footer::footer1">
+      <footer id="footer1" th:include="footer::footer1">
 		  
 	  </footer>
 	 
+	 
+	    <!--  Passing dynamic values to fragment footer page getting from controller 
+      <footer id="footer1" th:replace="footer::footer1(${title},${subtitle})">
+		  
+	  </footer>
+	  
+	  -->
 	  
 	
 </body>

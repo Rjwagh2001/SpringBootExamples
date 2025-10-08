@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" crossorigin="anonymous">
+    <title>Form Submitted Successfully</title>
+</head>
+<body>
+
+<!-- Page heading -->
+<h1 class="text-center mt-5">Form Submitted Successfully!</h1>
+
+<!-- Container to show submitted data -->
+<div class="container mt-3 text-center">
+
+    <!-- Display userName -->
+    <h2>User Name: <span th:text="${LoginData.userName}">Default Name</span></h2>
+
+    <!-- Display userEmail -->
+    <h2>Email: <span th:text="${LoginData.userEmail}">Default Email</span></h2>
+
+    <!-- Display checkbox status -->
+    <h3 th:text="${LoginData.checkMe} ? 'Checked' : 'Not Checked'">Not Checked</h3>
+
+    <!-- Optional: Add a link to go back to the form -->
+    <a th:href="@{/formrequest}" class="btn btn-primary mt-3">Go Back to Form</a>
+
+</div>
+
+</body>
+</html>

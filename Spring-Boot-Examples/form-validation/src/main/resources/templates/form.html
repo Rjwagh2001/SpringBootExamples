@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"> <!-- 1. Declare Thymeleaf namespace for all th:* attributes -->
+<head>
+    <meta charset="ISO-8859-1"> <!-- 2. Character encoding -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" crossorigin="anonymous"> <!-- 3. Bootstrap CSS for styling -->
+    <title>Login Here</title> <!-- 4. Page title -->
+</head>
+<body>
+<h1 class="text-center mt-5">Login Here</h1> <!-- 5. Page heading, centered using Bootstrap classes -->
+
+<div class="container mt-3"> <!-- 6. Bootstrap container for proper alignment and spacing -->
+    <div class="row"> <!-- 7. Row for Bootstrap grid layout -->
+        <div class="col-md-6 offset-md-3"> <!-- 8. Column: center on medium+ screens using offset -->
+
+            <!-- 9. Form -->
+            <!-- th:action="@{/process}" -> Spring MVC endpoint to submit form -->
+            <!-- th:object="${LoginData}" -> Binds this form to the LoginData model object -->
+            <!-- method="post" -> Use POST HTTP method -->
+            <form th:action="@{/process}" th:object="${LoginData}" method="post">
+
+                <!-- 10. User Name input field -->
+                <div class="form-group">
+                    <label>User Name</label> <!-- Label for input field -->
+                    <!-- th:field="*{userName}" -> Binds input to LoginData.userName -->
+                    <!-- This automatically sets the "name" and "id" attributes -->
+                    <input type="text" th:field="*{userName}" class="form-control"/>
+                    <!-- 11. Display validation errors for userName -->
+                    <!-- th:if="${#fields.hasErrors('userName')}" -> check if this field has validation errors -->
+                    <!-- th:errors="*{userName}" -> display all validation messages for this field -->
+                    <div th:if="${#fields.hasErrors('userName')}" th:errors="*{userName}" class="text-danger"></div>
+                </div>
+
+                <!-- 12. User Email input field -->
+                <div class="form-group">
+                    <label>User Email</label>
+                    <input type="text" th:field="*{userEmail}" class="form-control"/>
+                    <!-- Display validation errors for userEmail -->
+                    <div th:if="${#fields.hasErrors('userEmail')}" th:errors="*{userEmail}" class="text-danger"></div>
+                </div>
+
+                <!-- 13. Checkbox input -->
+                <div class="form-group form-check">
+                    <!-- th:field="*{checkMe}" -> binds to boolean checkMe property in LoginData -->
+                    <input type="checkbox" th:field="*{checkMe}" class="form-check-input" id="exampleCheck1"/>
+                    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                </div>
+
+                <!-- 14. Submit button -->
+                <button type="submit" class="btn btn-primary">Submit</button>
+
+            </form> <!-- End of form -->
+
+        </div> <!-- End column -->
+    </div> <!-- End row -->
+</div> <!-- End container -->
+</body>
+</html>
